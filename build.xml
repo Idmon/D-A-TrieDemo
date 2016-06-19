@@ -37,8 +37,8 @@
   </target>
 	
   <target name="dist" depends="compile" description="generate the distribution">
-	<mkdir dir="${dist}/lib"/>
+	<mkdir dir="${dist}/releases"/>
 
-	<jar jarfile="${dist}/lib/MyProject-${DSTAMP}.jar" basedir="${build}"/>
+	<jar jarfile="${dist}/releases/MyProject-${DSTAMP}.jar" basedir="${build}"/>
   </target>
 </project>
