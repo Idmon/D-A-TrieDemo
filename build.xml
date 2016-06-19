@@ -37,7 +37,7 @@
 	</target>
 	
 	<target name="runTests" description="Run JUnit tests">
-	    <junit printsummary="yes" dir="test" fork="true">
+	    <junit printsummary="yes" dir="test" fork="true" failureproperty="test.failed">
 	    	<classpath>
 	    	      <pathelement location="bin" />    
 	    	      <pathelement location="lib/junit-4.12.jar"/>
@@ -46,6 +46,7 @@
 	            <formatter type="xml" />
 	        </test>
 	    </junit>
+		<fail message="Test failure detected, check test results." if="test.failed" />
 	</target>
 	
 	
