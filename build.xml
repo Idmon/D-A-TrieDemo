@@ -39,6 +39,6 @@
   <target name="dist" depends="compile" description="generate the distribution">
 	<mkdir dir="${dist}/releases"/>
 
-	<jar jarfile="${dist}/releases/MyProject-${DSTAMP}.jar" basedir="${build}"/>
+	<jar jarfile="${dist}/releases/MyProject-${DSTAMP}.jar" basedir="${main.build.dir}"/>
   </target>
 </project>
