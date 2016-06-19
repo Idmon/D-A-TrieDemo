@@ -9,6 +9,7 @@
   <property name="bin" location="bin"/>
   <property name="dist" location="dist"/>
   <property name="junit" location="lib/junit-4.11.jar"/>
+  <property name="hamcrest" location="lib/hamcrest-all-1.3.jar"/>
 	
   <path id="_classpath">
         <pathelement path="${junit}"/>
