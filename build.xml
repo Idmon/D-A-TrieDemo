@@ -1,8 +1,8 @@
 <project name="junit-example">
   <property name="main.build.dir" value="build"/>
   <property name="main.src.dir" value="src"/>
-  <property name="test.build.dir" value="build/test"/>
   <property name="test.src.dir" value="test"/>
+  <property name="test.build.dir" value="build/test"/>
 
   <path id="classpath.test">
     <pathelement location="lib/junit-4.11.jar"/>
@@ -34,5 +34,11 @@
             <fileset dir="${test.src.dir}" includes="**/Test*" />
         </batchtest>
     </junit>
+  </target>
+	
+  <target name="dist" depends="compile" description="generate the distribution">
+	<mkdir dir="${dist}/lib"/>
+
+	<jar jarfile="${dist}/lib/MyProject-${DSTAMP}.jar" basedir="${build}"/>
   </target>
 </project>
