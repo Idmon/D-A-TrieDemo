@@ -6,6 +6,12 @@
   <property name="src" location="src"/>
   <property name="build" location="build"/>
   <property name="dist" location="dist"/>
+  <property name="junit" location="lib/junit-4.12.jar"/>
+	
+  <path id="_classpath">
+        <pathelement path="${junit}"/>
+        <pathelement path="${build}"/>
+  </path>
 
   <target name="init">
     <!-- Create the time stamp -->
