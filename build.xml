@@ -17,6 +17,7 @@
         <pathelement path="${build}"/>
   </path>
 
+
   <target name="init">
     <!-- Create the time stamp -->
     <tstamp/>
@@ -40,7 +41,11 @@
 	
 	<target name="runTests" description="Run JUnit tests">
 	    <junit printsummary="yes" dir="test" fork="true" failureproperty="test.failed">
-	    	<classpath refid="_classpath" />
+	    	<classpath>
+	    	      <pathelement location="bin" />    
+	    		  <pathelement location="lib/hamcrest-all-1.3.jar"/>
+	    	      <pathelement location="lib/junit-4.11.jar"/>
+	    	 </classpath> 
 	        <test name="xxx.AllNonGWTTestCaseTests" haltonfailure="no" outfile="result">
 	            <formatter type="xml" />
 	        </test>
