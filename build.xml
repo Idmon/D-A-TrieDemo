@@ -37,7 +37,7 @@
 	</target>
 	
 	<target name="runTests" description="Run JUnit tests">
-	    <junit printsummary="yes" dir="test-classes" fork="true">
+	    <junit printsummary="yes" dir="test" fork="true">
 	    	<classpath>
 	    	      <pathelement location="bin" />    
 	    	      <pathelement location="lib/junit-4.12.jar"/>
