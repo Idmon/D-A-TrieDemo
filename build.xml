@@ -42,7 +42,7 @@
 	
 	
 	<target name="runTests" depends="compileTest">
-	    <junit printsummary="on" haltonfailure="yes" fork="true">
+	    <junit printsummary="on" haltonfailure="no" fork="true" failureproperty="test.failed">
 	        <classpath>
 	          <path refid="_classpath"/>
 	        </classpath>
@@ -51,6 +51,7 @@
 	            <fileset dir="${test.dir}" includes="**/*Test.java" />
 	        </batchtest>
 	    </junit>
+		<fail message="Test failure detected, check test results." if="test.failed" />
 	  </target>
 	
 	
