@@ -24,6 +24,7 @@
 
   <target name="test" depends="test-compile">
     <junit printsummary="on" haltonfailure="yes" fork="true" failureproperty="test.failed">
+    	<assertions><enable/></assertions>
         <classpath>
           <path refid="classpath.test"/>
           <pathelement location="${test.build.dir}"/>
