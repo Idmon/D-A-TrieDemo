@@ -40,7 +40,10 @@
 	
 	<target name="runTests" description="Run JUnit tests">
 	    <junit printsummary="yes" dir="test" fork="true" failureproperty="test.failed">
-	    	<classpath refid="_classpath" />
+	    	<classpath>
+	    	      <pathelement location="bin" />    
+	    	      <pathelement location="lib/junit-4.11.jar"/>
+	    	 </classpath> 
 	        <test name="xxx.AllNonGWTTestCaseTests" haltonfailure="no" outfile="result">
 	            <formatter type="xml" />
 	        </test>
