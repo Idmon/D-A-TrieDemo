@@ -4,12 +4,11 @@
   </description>
   <!-- set global properties for this build -->
   <property name="src" location="src"/>
-  <property name="test.dir" location="src/test"/>
+  <property name="test.dir" location="test"/>
   <property name="build" location="build"/>
-	<property name="bin" location="bin"/>
+  <property name="bin" location="bin"/>
   <property name="dist" location="dist"/>
   <property name="junit" location="lib/junit-4.11.jar"/>
-  <property name="lib.dir" location="lib"/>
 	
   <path id="_classpath">
         <pathelement path="${junit}"/>
