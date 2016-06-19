@@ -8,7 +8,7 @@
   <property name="build" location="build"/>
 	<property name="bin" location="bin"/>
   <property name="dist" location="dist"/>
-  <property name="junit" location="lib/junit-4.12.jar"/>
+  <property name="junit" location="lib/junit-4.11.jar"/>
   <property name="lib.dir" location="lib"/>
 	
   <path id="_classpath">
@@ -42,7 +42,7 @@
 	    <junit printsummary="yes" dir="test" fork="true" failureproperty="test.failed">
 	    	<classpath>
 	    	      <pathelement location="bin" />    
-	    	      <pathelement location="lib/junit-4.12.jar"/>
+	    	      <pathelement location="lib/junit-4.11.jar"/>
 	    	 </classpath> 
 	        <test name="xxx.AllNonGWTTestCaseTests" haltonfailure="no" outfile="result">
 	            <formatter type="xml" />
