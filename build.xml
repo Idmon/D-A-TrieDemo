@@ -10,16 +10,12 @@
   <property name="dist" location="dist"/>
   <property name="junit" location="lib/junit-4.12.jar"/>
   <property name="lib.dir" location="lib"/>
-	<property name="build.test" location="build/test/java"/>
 	
-	<path id="test.path.id">
-	    <path location="${build.test}" />
-	    <path refid="lib.path.id" />
-	</path>
-
-	<path id="lib.path.id">
-	    <fileset dir="${lib.dir}" />
-	</path>
+  <path id="_classpath">
+        <pathelement path="${junit}"/>
+  	    <pathelement path="${hamcrest}"/>
+        <pathelement path="${build}"/>
+  </path>
 
   <target name="init">
     <!-- Create the time stamp -->
@@ -37,18 +33,20 @@
   </target>
 	
 	<target name="compileTest" depends="compile" description="compile jUnit Test cases ">
-	    <javac srcdir="${test-dir}" destdir="${bin}" includeantruntime="true" nowarn="yes" debug="true" >
+	    <javac srcdir="${test.dir}" destdir="${bin}" includeantruntime="true" nowarn="yes" debug="true" >
 	    	<classpath refid="_classpath"/>
 	    </javac>
 	</target>
 	
 	<target name="runTests" description="Run JUnit tests">
 	    <junit printsummary="yes" dir="test" fork="true" failureproperty="test.failed">
-	    	<classpath refid="test.path.id" />
-	        <batchtest>
-	             <fileset dir="${test.dir}" />
-	         </batchtest>
-	    	<formatter type="plain" usefile="false" />
+	    	<classpath>
+	    	      <pathelement location="bin" />    
+	    	      <pathelement location="lib/junit-4.12.jar"/>
+	    	 </classpath> 
+	        <test name="xxx.AllNonGWTTestCaseTests" haltonfailure="no" outfile="result">
+	            <formatter type="xml" />
+	        </test>
 	    </junit>
 		<fail message="Test failure detected, check test results." if="test.failed" />
 	</target>
