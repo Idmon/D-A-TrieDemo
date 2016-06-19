@@ -1,4 +1,4 @@
-package nl.saxion.dna;
+
 
 import static org.junit.Assert.*;
 
@@ -6,6 +6,11 @@ import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import nl.saxion.dna.Trie;
+import nl.saxion.dna.Data;
+import nl.saxion.dna.MapUtil;
+import nl.saxion.dna.TrieNode;
 
 public class TestTrie {
 	
