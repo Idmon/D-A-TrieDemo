@@ -96,7 +96,7 @@ public class TestTrie {
 	 * Tests inserting null or empty objects
 	 * FAIL expected
 	 */
-	@Test(expected=AssertionError.class)
+	@Test
 	public void insertNullAndEmpty() {
 		trie.insert(null, new Data(8));		// Null word
 		trie.insert("", new Data(8));		// Empty string word
