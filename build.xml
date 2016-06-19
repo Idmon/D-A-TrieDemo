@@ -23,7 +23,7 @@
   </target>
 
   <target name="test" depends="test-compile">
-    <junit printsummary="on" haltonfailure="yes" fork="true" failureproperty="test.failed">
+    <junit printsummary="on" haltonfailure="yes" fork="true">
     	<assertions><enable/></assertions>
         <classpath>
           <path refid="classpath.test"/>
@@ -34,6 +34,5 @@
             <fileset dir="${test.src.dir}" includes="**/Test*" />
         </batchtest>
     </junit>
-  	<fail message="Test failure detected, check test results." if="test.failed" />
   </target>
 </project>
