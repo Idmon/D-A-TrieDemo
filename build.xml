@@ -24,9 +24,8 @@
         description="compile the source">
     <!-- Compile the java code from ${src} into ${build} -->
     <javac includeantruntime="false" srcdir="${src}" destdir="${build}" >
-
-    	            <classpath refid="_classpath"/>
-    	</javac>
+    	<classpath refid="_classpath"/>
+    </javac>
   </target>
 
   <target name="dist" depends="compile"
@@ -42,6 +41,21 @@
 	     </manifest>
 	</jar>
   </target>
+	
+	<target name="test" depends="compile">
+	  <junit>
+	    <classpath>
+	      <pathelement location="bin" />    
+	      <pathelement location="lib/junit-4.12.jar"/>
+	    </classpath>    
+	    <batchtest>
+	       <fileset dir="${test}">
+	            <include name="**/*Test*" />
+	       </fileset>
+	    </batchtest>
+	    <formatter type="brief" usefile="false"/>
+	  </junit>
+	</target>   
 
   <target name="clean"
         description="clean up">
