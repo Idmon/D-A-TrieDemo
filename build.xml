@@ -6,6 +6,7 @@
   <property name="src" location="src"/>
   <property name="test-dir" location="test"/>
   <property name="build" location="build"/>
+	<property name="bin" location="bin"/>
   <property name="dist" location="dist"/>
   <property name="junit" location="lib/junit-4.12.jar"/>
 	
