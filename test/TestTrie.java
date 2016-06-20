@@ -107,7 +107,7 @@ public class TestTrie {
 	 * Tests deleting null or empty objects
 	 * FAIL expected
 	 */
-	
+	@Test
 	public void deleteNullAndEmpty() {
 		trie.delete(null);					// Null word
 		trie.delete("");					// Empty string word
