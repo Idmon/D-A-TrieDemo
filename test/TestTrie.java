@@ -113,6 +113,7 @@ public class TestTrie {
 		trie.delete("");					// Empty string word
 	}
 	
+	
 	/**
 	 * Tests finding null or empty objects
 	 * FAIL expected
