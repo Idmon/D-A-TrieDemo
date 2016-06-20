@@ -47,8 +47,8 @@ public class Trie<T> {
 	 * @return Data 	- The Data-object stored in the word
 	 */
 	public T search(String prefix) {
-		assert prefix != null	: "Prefix is null";
-		assert prefix != ""	: "prefix is empty";
+		assert prefix != null	: "Prefix cannot be null";
+		assert prefix != ""	: "prefix cannot be empty";
 		
 		TrieNode<T> lastNode = root;
 		
@@ -74,8 +74,8 @@ public class Trie<T> {
 	 * @param prefix
 	 */
 	public void delete(String prefix) {
-		assert prefix != null	: "Prefix is null";
-		assert prefix != ""	: "prefix is empty";
+		assert prefix != null	: "Prefix cannot be null";
+		assert prefix != ""	: "prefix cannot be empty";
 		
 		TrieNode<T> lastNode = root;
 		
